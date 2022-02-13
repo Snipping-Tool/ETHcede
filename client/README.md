@@ -4,5 +4,7 @@ This project demonstrates the frontend for ETH transfer service with latest tran
 
 Try running the following tasks:
 
+```shell
 1. npm install
 2. npm run dev
+```
