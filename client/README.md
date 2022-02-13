@@ -1,15 +1,8 @@
-# Basic Sample Hardhat Project
+# React WEB3.0 Sample Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+This project demonstrates the frontend for ETH transfer service with latest transaction viewer.
 
-Try running some of the following tasks:
+Try running the following tasks:
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+1. npm install
+2. npm run dev
