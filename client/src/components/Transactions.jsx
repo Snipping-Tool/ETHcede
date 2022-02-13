@@ -6,20 +6,20 @@ import useFetch from "../hooks/useFetch";
 import dummyData from "../utils/dummyData";
 import { shortenAddress } from "../utils/shortenAddress";
 
-import { CgArrowRightR, CgArrowDownR } from "react-icons/cg"
+import { FaWallet } from "react-icons/fa"
 import { SiEthereum } from "react-icons/si"
 
 const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword, amount, url }) => {
   // const gifUrl = useFetch({ keyword });
   
   return (
-    <div className="bg-[#181918] m-4 flex-1
+    <div className="m-4 flex-1
       2xl:min-w-[450px]
       2xl:max-w-[500px]
       sm:min-w-[270px]
       sm:max-w-[300px]
       min-w-full
-      flex-col p-4 rounded-3xl hover:shadow-2xl white-glassmorphism"
+      flex-col p-4 rounded-3xl hover:shadow-2xl white-glassmorphism border hover:border-pink-700 hover:bg-[#141414] transition hover:duration-700"
     >
       <div className="flex flex-col w-full mt-3">
         {/* <img
@@ -28,12 +28,12 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
           className="w-full h-64 2xl:h-96 rounded-md shadow-lg object-cover"
         /> */}
         <a href={`https://ropsten.etherscan.io/address/${addressFrom}`} target="_blank" rel="noreferrer">
-          <p className="text-white text-base flex">From: <SiEthereum fontSize={30} color="#fff"/>{shortenAddress(addressFrom)}</p>
+          <p className="text-white text-base flex">From: <FaWallet fontSize={20} color="#fff" className="mx-2" />{shortenAddress(addressFrom)}</p>
         </a>
         <a href={`https://ropsten.etherscan.io/address/${addressTo}`} target="_blank" rel="noreferrer">
-          <p className="text-white text-base flex">To: <SiEthereum fontSize={30} color="#fff"/>{shortenAddress(addressTo)}</p>
+          <p className="text-white text-base flex">To: <FaWallet fontSize={20} color="#fff" className="mx-2"/>{shortenAddress(addressTo)}</p>
         </a>
-        <p className="text-white text-base mb-3">Amount: {amount} ETH</p>
+        <p className="text-white text-base mb-3 flex">Amount: <SiEthereum fontSize={30} color="#fff"/> {amount} ETH</p>
           
 
           <div className="transaction-card p-3 px-5 w-full rounded-3xl shadow-2xl ">
@@ -45,7 +45,7 @@ const TransactionsCard = ({ addressTo, addressFrom, timestamp, message, keyword,
               <p className="text-black text-base">Message: {message}</p>:
               <p className="text-[#3b3a3b] text-base">No Message included.</p>
             }
-            <p className="text-[#3b3a3b] font-bold">{timestamp}</p>
+            <p className="text-[#3b3a3b] font-bold hover:text-pink-700 transition hover:duration-700">{timestamp}</p>
           </div>
 
         <div className="flex justify-center w-full">
@@ -75,7 +75,7 @@ const Transactions = () => {
         )}
 
         <div className="flex flex-wrap justify-center mt-10">
-          {[...dummyData, ...transactions].reverse().map((transaction, i) => (
+          {[ ...transactions].reverse().map((transaction, i) => (
             <TransactionsCard key={i} {...transaction} />
           ))}
         </div>

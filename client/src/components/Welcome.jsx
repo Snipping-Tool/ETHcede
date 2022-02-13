@@ -17,7 +17,7 @@ const Input = ({ placeholder, name, type, value, handleChange }) => (
     step="0.0001"
     value={value}
     onChange={(e) => handleChange(e, name)}
-    className="my-2 w-full rounded-sm p-2 outline-none bg-transparent text-white border-none text-sm white-glassmorphism"
+    className="my-2 w-full rounded-lg p-2 outline-[0px] border-[0px] bg-transparent text-white text-sm white-glassmorphism border-2 hover:border-pink-700"
   />
 );
 
@@ -42,13 +42,13 @@ const Welcome = () => {
             Send Ethereum <br /> across the world
           </h1>
           <p className="text-left mt-5 text-white font-light md:w-9/12 w-11/12 text-base">
-            Explore the crypto world. Buy and sell cryptocurrencies easily on ETHcede.
+            Explore the crypto world. Transfer cryptocurrencies easily on ETHcede.
           </p>
           {!currentAccount && (
             <button
               type="button"
               onClick={connectWallet}
-              className="flex flex-row justify-center items-center my-5 bg-[#2952e3] p-3 rounded-full cursor-pointer hover:bg-[#2546bd]"
+              className="flex flex-row justify-center items-center my-5 bg-pink-700 p-3 px-5 rounded-full cursor-pointer hover:bg-[#3d4f7c] transition hover:duration-700"
             >
               <FaWallet className="text-white mr-2" />
               <p className="text-white text-base font-semibold">
@@ -122,7 +122,7 @@ const Welcome = () => {
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="text-white w-full mt-2 border-[1px] p-2 border-[#be185d] hover:bg-[#3d4f7c] rounded-full cursor-pointer"
+                  className="text-white w-full mt-2 border-[1px] p-2 border-[#be185d] hover:bg-[#3d4f7c] rounded-full cursor-pointer transition hover:duration-700"
                 >
                   Send now
                 </button>
